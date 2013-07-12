@@ -22,10 +22,29 @@ References:
 */
 
 var fs = require('fs');
+var rest = require('restler');
 var program = require('commander');
 var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
+
+
+
+var resultNew = rest.get('http://your-heroku-app.com'); 
+
+
+// We can see the result in the screen                                                                                         
+console.log(resultNew);                                                                
+
+// this one will be fine                                                                                                                                                                 
+rest.get('http://damp-dusk-5117.herokuapp.com').on('complete', function(result) {   
+          
+            // save html to the file
+             fs.writeFile('web.html',result);                                        
+            
+           // or we can see the results in the screen                                                                        
+            console.log(result);                
+});
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
