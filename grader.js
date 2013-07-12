@@ -30,7 +30,7 @@ var CHECKSFILE_DEFAULT = "checks.json";
 
 
 
-var resultNew = rest.get('http://your-heroku-app.com'); 
+var resultNew = rest.get('http://damp-dusk-5117.herokuapp.com'); 
 
 
 // We can see the result in the screen                                                                                         
